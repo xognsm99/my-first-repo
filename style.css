@@ -1,0 +1,168 @@
+/* =========================
+   Global
+========================= */
+/* 1. body 배경색 설정 */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 공통 섹션 앵커 보정(고정 네비 대비) */
+section { scroll-margin-top: 70px; }
+
+/* =========================
+   Hero
+========================= */
+/* 2. hero-section 배경 그라데이션 설정 */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  min-height: 500px;
+}
+
+/* 3. 프로필 이미지 */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 5px solid #fff; /* 4. 테두리 색상 */
+}
+
+/* =========================
+   Cards
+========================= */
+/* 5. 카드 호버 효과 */
+.card {
+  transition: transform 0.3s;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* 6. -5px 추천 */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* 7. 0.2 추천 */
+}
+
+/* =========================
+   Headings
+========================= */
+/* 8. 섹션 제목 스타일 */
+h2 {
+  color: #333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+/* 9. 제목 아래 장식선 */
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #667eea;
+}
+
+/* =========================
+   Buttons
+========================= */
+/* 10. 버튼 커스텀 스타일 */
+.btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   About - 관심 분야 박스
+========================= */
+.interests-box .card-title {
+  font-weight: 800;
+  font-size: 2rem !important; /* 제목 2배 */
+}
+
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;                 /* 배지 간격 */
+  justify-content: center;
+}
+
+.badge-group .badge {
+  font-size: 1.2rem !important;  /* 배지 크게 */
+  padding: 14px 20px;            /* 여백 확대 */
+  border-radius: 999px;          /* 알약 형태 */
+}
+
+/* =========================
+   Projects - 모바일 1열 스택
+========================= */
+@media (max-width: 768px) {
+  .project-card .col-md-5,
+  .project-card .col-md-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .project-card .col-md-5 { margin-bottom: 15px; }
+  .project-card img {
+    width: 100%;
+    height: auto;        /* 비율 유지 */
+    max-height: 260px;   /* 과도한 높이 제한 */
+    object-fit: cover;
+  }
+}
+
+/* 태블릿에서 프로젝트 이미지 살짝 여유 */
+@media (max-width: 991px) {
+  .project-card img { max-height: 320px; }
+}
+
+/* =========================
+   Responsive (Tablet)
+========================= */
+@media (max-width: 991px) {
+  /* 1. 카드 레이아웃 조정 */
+  .col-md-4 { margin-bottom: 20px; }
+
+  /* 2. 섹션 패딩 조정 */
+  section { padding: 40px 0; }
+}
+
+/* =========================
+   Responsive (Mobile)
+========================= */
+@media (max-width: 768px) {
+  /* 3. 프로필 이미지 크기 */
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* 4. 메인 제목 크기 */
+  .display-4 { font-size: 2rem; }
+
+  /* 5. hero 섹션 높이/패딩 */
+  .hero-section {
+    min-height: 400px;
+    padding: 30px 0;
+  }
+
+  /* 6. 네비게이션 정렬 */
+  .navbar-nav { text-align: center; }
+
+  /* 모바일에서 배지 살짝 축소해 가독성 유지 */
+  .badge-group .badge {
+    font-size: 1rem !important;
+    padding: 10px 14px;
+  }
+}
