@@ -27,7 +27,7 @@ section { scroll-margin-top: var(--nav-height); }
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
   min-height: 500px;
-  padding-top: 30px; /* 프로필 이미지 숨김 방지 */
+  padding-top: 100px; /* 프로필 이미지 숨김 방지 */
 }
 
 /* 3. 프로필 이미지 */
